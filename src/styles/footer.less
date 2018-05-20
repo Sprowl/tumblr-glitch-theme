@@ -1,0 +1,76 @@
+.footer {
+    margin-top: 7.5rem;
+    position: relative;
+    z-index: 32;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100% 0;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas: "pagination" "install";
+    font-family: "Raleway", sans-serif;
+
+    .wrapper-pagination {
+        grid-area: pagination;
+    }
+
+    .wrapper-install {
+        grid-area: install;
+        text-align: right;
+    }
+
+    .pagination ul li, .install {
+        background-color: var(--color-background-content);
+    }
+
+    .pagination {
+        display: block;
+        text-align: center;
+
+        ul {
+            display: block;
+
+             li {
+                float: left;
+                display: block;
+
+                &._current-page {
+                    background-color: rgba(17, 17, 17, 0.2);
+                    cursor: default;
+                }
+            }
+        }
+
+        a, a:link, a:visited {
+            color: #FFFFFF;
+            transition: 0.35s color ease;
+        }
+
+        a:focus, a:hover, a:active {
+            color: var(--color-glow-border-top);
+            transition: none;
+        }
+
+        .page-number, .page-last {
+            // top: -1px;
+            position: relative;
+            font-size: 0.75rem;
+        }
+
+        .page-last {
+            display: none;
+        }
+    }
+
+    .install {
+        display: none;
+
+        .blocklink {
+            color: var(--color-text-quaternary);
+
+            &:focus, &:hover, &:active {
+                color: var(--color-glow-border-top);
+            }
+        }
+    }
+}

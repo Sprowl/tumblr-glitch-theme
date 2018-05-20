@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {block:Hidden}
+    <!-- PAGE BACKGROUND -->
+    <meta name="color:Background Gradient Top" content="#562e3d" />
+    <meta name="color:Background Gradient Bottom" content="#221335" />
+    <!-- GLOW COLORS -->
+    <meta name="color:Avatar Glow Top Page" content="#e6a376" />
+    <meta name="color:Avatar Glow Bottom Page" content="#9564ff" />
+    <meta name="color:Following Glare Top Page" content="#833e35" />
+    <meta name="color:Following Glare Bottom Page" content="#2c0d71" />
+    <!-- PAGES HOVER HUE ROTATE -->
+    <meta name="text:Pagination Current page HUE color rotation" content="309" />
+
+    <meta name="text:Avatar Mouseover Title" content="" />
+    <meta name="if:Random Post Link" content="1" />
+    <meta name="if:Allow Searchengines indexing of blog" content="1" />
+    {/block:Hidden}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {block:IfNotAllowSearchenginesIndexingOfBlog}<meta name="robots" content="noindex, nofollow" />{/block:IfNotAllowSearchenginesIndexingOfBlog}
+    <title>{Title}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+    <style type="text/css">
+    :root {
+        --user-site-background-top: {color:Background Gradient Top};
+        --user-site-background-bottom: {color:Background Gradient Bottom};
+        --user-color-glow-border-top: rgba({RGBcolor:Avatar Glow Top Page},0.8);
+        --user-color-glow-border-bottom: rgba({RGBcolor:Avatar Glow Bottom Page},0.8);
+        --user-color-glow-light-top-start: rgba({RGBcolor:Following Glare Top Page},1.0);
+        --user-color-glow-light-top-end: rgba({RGBcolor:Following Glare Top Page},0.0);
+        --user-color-glow-light-bottom-start: rgba({RGBcolor:Following Glare Bottom Page},1.0);
+        --user-color-glow-light-bottom-end: rgba({RGBcolor:Following Glare Bottom Page},0.0);
+        --user-page-current-hue-rotate: {text:Pagination Current page HUE color rotation}deg;
+    }
+    {CustomCSS}
+    </style>
+
+
+
+    <link href="https://static.tumblr.com/jigaqvj/L1dp914o5/theme.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://static.tumblr.com/jigaqvj/H4Dp913cy/bundle.js"></script>
+    <script type="text/javascript">
+    window.onThemeReady = function () {
+        // Add your custom scripts here or just use it as a hook. Will be executed after the theme is done executing its own script.
+    };
+    </script>
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Pavanam|Raleway+Medium" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+</head>
+<body class="{block:IndexPage} page-index{/block:IndexPage}{block:PermalinkPage} page-permalink{/block:PermalinkPage}"><wrapper class="podium">
+
+    <usercard id="usercard" class="usercard">
+        <a href="{BlogURL}" id="avatar-container" class="avatar glitch-auto glitch-disable-smartphone">
+            <img src="{PortraitURL-128}" id="avatar-img" alt="Avatar" class="image"{block:IfAvatarMouseoverTitle} title="{text:Avatar Mouseover Title}"{/block:IfAvatarMouseoverTitle} />
+        </a>
+
+        <content class="content">
+            <h2 class="title">{Title}</h2>
+            {block:Description}
+            <desc class="description">
+                {Description}
+            </desc>
+            {/block:Description}
+
+        </content>
+
+        <glow class="glow"></glow>
+    </usercard>
+
+    <nav id="pages" class="pages">
+        <ul>
+            <li class="glitchy" data-glitch-cache-group="page_home"><a href="{BlogURL}" class="blocklink{block:HomePage} _current-page{/block:HomePage}" title="{lang:Home}">{lang:Home}</a></li>
+            {block:AskEnabled}
+            <li class="glitchy" data-glitch-cache-group="page_{URLEncodedAskLabel}"><a href="/ask" class="blocklink{block:AskPage} _current-page{/block:AskPage}" title="{AskLabel}">{AskLabel}</a></li>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            <li class="glitchy" data-glitch-cache-group="page_{URLEncodedSubmitLabel}"><a href="/submit" class="blocklink{block:SubmitPage} _current-page{/block:SubmitPage}" title="{SubmitLabel}">{SubmitLabel}</a></li>
+            {/block:SubmissionsEnabled}
+            <li class="glitchy" data-glitch-cache-group="page_archive"><a href="/archive" class="blocklink" title="{lang:Archive}">{lang:Archive}</a></li>
+            {block:Likes}
+            <li class="glitchy" data-glitch-cache-group="page_likes"><a href="/likes" class="blocklink{block:LikesPage} _current-page{/block:LikesPage}" title="{lang:Likes}">{lang:Likes}</a></li>
+            {/block:Likes}
+            {block:ShareFollowing}
+            <li class="glitchy" data-glitch-cache-group="page_following"><a href="/following" class="blocklink{block:FollowingPage} _current-page{/block:FollowingPage}" title="{lang:Following}">{lang:Following}</a></li>
+            {/block:ShareFollowing}
+            {block:ifRandomPostLink}
+            <li class="glitchy" data-glitch-cache-group="page_random"><a href="/random" class="blocklink" title="{lang:Random}">{lang:Random}</a></li>
+            {/block:ifRandomPostLink}
+            {block:HasPages}
+            {block:Pages}
+            <li class="glitchy" data-glitch-cache-group="page_{URLEncodedLabel}"><a href="{URL}" class="blocklink _{CurrentState} {ExternalState}" title="{Label}">{Label}</a></li>
+            {/block:Pages}
+            {/block:HasPages}
+
+        </ul>
+    </nav>
+
+    <ul id="posts" class="posts">
+
+{block:TagPage}
+    <li class="page-title">
+        <h1>{lang:TagResultCount posts tagged Tag 3}</h1>
+    </li>
+{/block:TagPage}
+
+{block:Posts inlineMediaWidth="1612" inlineNestedMediaWidth="806"}
+    {block:Text}
+    <li class="post post-type-text{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+
+                    <div class="list-contents">
+                            {block:NotReblog}
+                            <message class="message">{Body}</message>
+                            {/block:NotReblog}
+                            {block:Reblogs}
+                            <message class="message">{Body}</message>
+                            {/block:Reblogs}
+                    </div>
+                    
+                    
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+
+
+
+
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Text}
+
+
+
+    {block:Photo}
+    <li class="post post-type-photo{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:HighRes} high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <photo class="photo">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"{block:LivePhoto}data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}"{/block:LivePhoto}>
+                        {LinkCloseTag}
+                    </photo>
+                    {block:NotReblog}
+                        <message class="message">{Caption}</message>
+                    {/block:NotReblog}
+                    
+                    
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Photo}
+
+
+
+    {block:Photoset}
+    <li class="post post-type-photoset{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:HighRes} high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <photoset class="photoset">
+                            {Photoset}
+                    </photoset>
+                    
+                    
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Photoset}
+
+
+
+    {block:Quote}
+    <li class="post post-type-quote{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <blockquote class="{Length}">
+                        <quote class="quote">
+                            <aposthrope class="before">“</aposthrope><text class="text">{Quote}</text><aposthrope class="after">”</aposthrope>
+                            {block:Source}
+                                <dash class="dash">—</dash><cite class="cite">{Source}</cite>
+                            {/block:Source}
+                        </quote>
+                    </blockquote>
+
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Quote}
+
+
+
+    {block:Link}
+    <li class="post post-type-link{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <a {Target} href="{URL}" class="link">
+                        <div class="link-thumbnail">
+                            {block:Thumbnail}<img src="{Thumbnail}" alt="" />{/block:Thumbnail}
+                        </div>
+                        <div class="link-text-wrapper">
+                            <h3 class="link-title">{Name}</h3>
+                            {block:Host}
+                            <div class="link-host">{Host}</div>
+                            {/block:Host}
+                        </div>
+                    </a>
+                    {block:NotReblog}
+                        <message class="message">{Description}</message>
+                    {/block:NotReblog}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Link}
+
+
+
+    {block:Chat}
+    <li class="post post-type-chat{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+                    <ul class="conversation">
+                    {block:Lines}
+                        <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+                    {/block:Lines}
+                    </ul>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Chat}
+
+
+
+    {block:Audio}
+    <li class="post post-type-audio{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <div class="container">
+                        {block:AudioEmbed}
+                            {AudioEmbed color="black"}
+                        {/block:AudioEmbed}
+                    </div>
+                    {block:NotReblog}
+                        <message class="message">{Caption}</message>
+                    {/block:NotReblog}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Audio}
+
+
+
+    {block:Video}
+    <li class="post post-type-video{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:Reblogs}1,{/block:Reblogs}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <div class="container">
+                        {VideoEmbed-700}
+                    </div>
+                    {block:NotReblog}
+                        <message class="message">{Caption}</message>
+                    {/block:NotReblog}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Video}
+
+
+
+    {block:Answer}
+    <li class="post post-type-answer{block:NotReblog} _original-post{/block:NotReblog}{block:Date} _not-static-page{/block:Date}{block:Caption} with-caption{/block:Caption} {TagsAsClasses}" data-post-id="{PostID}" data-replies-beat="{block:RebloggedFrom}{block:Reblogs}1,{/block:Reblogs}{/block:RebloggedFrom}">
+        <grid class="grid">
+            <wrapper class="wrapper wrapper-dynamic wrapper-content">
+                <box class="box box-content">
+                    <dl>
+                        <dt class="avatar asker">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{AskerPortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{AskerPortraitURL-64}" />
+                                <img src="{AskerPortraitURL-64}" />
+                            </picture>
+                        </dt>
+                        <dd class="text asker">
+                            <h5 class="username">{lang:Asker asked 2}:</h5>
+                            <message class="message">{Question}</message>
+                        </dd>
+
+                        <!-- Answer is part of a reblog -->
+                        {block:Answerer}
+                        <dt class="avatar answerer">
+                                <picture>
+                                    <source media="(min-width: 1921px)" srcset="{AnswererPortraitURL-128}" />
+                                    <source media="(min-width: 1224px)" srcset="{AnswererPortraitURL-64}" />
+                                    <img src="{AnswererPortraitURL-64}" />
+                                </picture>
+                            </dt>
+                            <dd class="text asker">
+                                <h5 class="username">{Answerer} answered:</h5>
+                                <message class="message">{Answer}</message>
+                            </dd>
+                        {/block:Answerer}
+                    </dl>
+
+                    <!-- Answer posted for the first time -->
+                    {block:NotReblog}
+                        <message class="answer">{Replies}</message>
+                    {/block:NotReblog}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-comments">
+                <box class="box box-comments">
+                    {block:RebloggedFrom}
+                    <dl>
+                        {block:Reblogs}
+                        <dt class="avatar">
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
+                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
+                                <img src="{PortraitURL-64}" />
+                            </picture>
+                            </a>{/block:HasPermalink}
+                        </dt>
+                        <dd class="text">
+                            <h5 class="username">
+                                {block:HasPermalink}<a href="{Permalink}" target="_blank">{Username}</a>{/block:HasPermalink}
+                                {block:HasNoPermalink}<span class="no-link">{Username}</span>{/block:HasNoPermalink}
+                            </h5>
+
+                            <message class="message">{Body}</message>
+                        </dd>
+                        {/block:Reblogs}
+                    </dl>
+
+                    {/block:RebloggedFrom}
+
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-meta">
+                <box class="box box-meta">
+                    {block:Date}
+                    <ul>
+                        <li class="source">{Block:NotReblog}{lang:Source}{/Block:NotReblog}{block:RebloggedFrom}<a href="{ReblogRootURL}" target="_blank" title="{ReblogRootName}">{lang:Source} {ReblogRootName}</a>{/block:RebloggedFrom}</li>
+                        <li class="via">{block:RebloggedFrom}<a href="{ReblogParentURL}" target="_blank" title="{ReblogParentName}">{lang:Via} {ReblogParentName}</a>{/block:RebloggedFrom}{block:NotReblog}{lang:By PostAuthorName}{/block:NotReblog}</li>
+                        <li class="notes">{block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+                        <li class="timestamp" {block:English}title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}"{/block:English}{block:NotEnglish}title="{DayOfMonth}. {Month} {Year}"{/block:NotEnglish}><a href="{Permalink}">{TimeAgo}</a></li>
+                    </ul>
+                    {/block:Date}
+                </box>
+            </wrapper>
+            <wrapper class="wrapper wrapper-dynamic wrapper-tags">
+                <box class="box box-tags clearfix">
+
+                    <actions class="actions">
+                        <ul>
+                            <li class="reblog">
+                                <a href="{ReblogURL}" target="_blank" class="glitchy glitch-freeze" title="Reblog" data-glitch-cache-group="action_reblog">
+                                    <i class="fa fa-retweet"></i>
+                                    <span>
+                                        Reblog
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="like">
+                                <div class="button-real">
+                                    {LikeButton size=20 color="white"}
+                                    <span class="label">Like</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </actions>
+
+                    <tags class="tags">
+                        <ul>
+                            {block:HasTags}
+                            {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                            {/block:HasTags}
+                        </ul>
+                    </tags>
+
+                </box>
+            </wrapper>
+        </grid>
+    </li>
+    {/block:Answer}
+
+{/block:Posts}
+
+        <li class="last">
+        <footer class="footer">
+            <wrapper class="wrapper wrapper-static wrapper-pagination">
+                <nav class="pagination">
+                    <ul class="clearfix">
+                    {block:Pagination}
+                        {block:PreviousPage}
+                        <li class="page-static"><a href="{PreviousPage}" class="blocklink">Newer</a></li>
+                        {/block:PreviousPage}
+                        {block:JumpPagination length="5"}
+                        {block:CurrentPage}
+                        <li class="_current-page page-number"><span class="blocklink">{PageNumber}</span></li>
+                        {/block:CurrentPage}
+                        {block:JumpPage}
+                        <li class="page-number"><a href="{URL}" class="blocklink">{PageNumber}</a></li>
+                        {/block:JumpPage}
+                        {/block:JumpPagination}
+                        {block:NextPage}
+                        <li class="page-static"><a href="{NextPage}" class="blocklink">Older</a></li>
+                        {/block:NextPage}
+                        <li class="page-last"><a href="{BlogURL}page/{TotalPages}" class="blocklink">{TotalPages}</a></li>
+                    {/block:Pagination}
+                    {block:PermalinkPagination}
+                        {block:PreviousPost}
+                        <li class="page-static"><a href="{PreviousPost}" class="blocklink">{lang:Previous post}</a></li>
+                        {/block:PreviousPost}
+                        {block:NextPost}
+                        <li class="page-static"><a href="{NextPost}" class="blocklink">{lang:Next post}</a></li>
+                        {/block:NextPost} 
+                    {/block:PermalinkPagination}
+                    </ul>
+                </nav>
+            </wrapper>
+            <wrapper class="wrapper wrapper-static wrapper-install"><div class="install"><a href="{BlogURL}theme" class="blocklink">Install Theme</a></div></wrapper>
+        </footer>
+        </li>
+
+    </ul>
+
+</wrapper></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

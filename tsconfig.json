@@ -1,0 +1,21 @@
+{
+    "typeRoots": ["types"],
+    "compilerOptions": {
+        "lib": [  "webworker", "dom", "es6", "dom.iterable", "scripthost" ],
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "allowJs": true,
+        "sourceMap": true,
+        "moduleResolution": "node"
+    },
+
+    "exclude": [
+        "./*.js",
+        "./dist/**/*",
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

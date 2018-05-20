@@ -1,0 +1,248 @@
+
+/* Tablets ----------- */
+@media only screen and (min-width: 550px) { //original: 481
+    .usercard {
+
+        .glow {
+            width: 100vw;
+            height: 100vw;
+        }
+    }
+
+    .pages {
+
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+    .posts {
+
+        .post {
+
+            // The user reached the post, and the comments are bigger than the content, so we set this class and make it scroll.
+            &._scrolling-content {
+
+                .wrapper-content, .wrapper-tags {
+                    top: 5rem !important;
+                    left: var(--script-left-content, initial) !important;
+                    width: var(--script-width-content) !important;
+                    position: fixed !important;
+                }
+            }
+
+            // The user reached the post, and the content is bigger than the comments, so we set this class and make it scroll.
+            &._scrolling-comments {
+
+                .wrapper-meta, .wrapper-comments {
+                    top: 5rem !important;
+                    left: var(--script-left-comments, initial) !important;
+                    width: var(--script-width-comments) !important;
+                    position: fixed !important;
+                }
+            }
+
+            // The content scrolled with the view, and now the user reached the bottom, so we let the content rest.
+            &._stop-content {
+
+                .wrapper-content, .wrapper-tags {
+                    top: var(--post-scroll-margin) !important;
+                    position: relative !important;
+                }
+            }
+
+            // The comments scrolled with the view, and now the user reached the bottom, so we let the comments rest.
+            &._stop-comments {
+
+                .wrapper-meta, .wrapper-comments {
+                    top: var(--post-scroll-margin) !important;
+                    position: relative !important;
+                }
+            }
+
+            // If there are no replies, we do not need a 2-column layout for this post.
+            &[data-replies-beat=""], &.post-type-text[data-replies-beat="1,"] {
+
+                .grid {
+                    grid-template-columns: var(--script-width-full, 1fr);
+                    grid-template-rows: var(--post-meta-height) 1fr;
+                    grid-column-gap: 0;
+                    grid-template-areas: "comments" "content";
+
+                    .wrapper-comments {
+                        display: none;
+                    }
+
+                    .wrapper-meta {
+                        min-width: var(--script-width-content);
+                    }
+                }
+
+                &.post-type-video {
+
+                    .box-content {
+        
+                        iframe {
+                            height: ~"calc( var(--script-width-full) / 16 * 9 )";
+                        }
+                    }
+                }
+
+                // &._original-post {
+                
+                //     .grid {
+
+                //         .wrapper-content {
+                //             margin-top: 2.22rem;
+                //         }
+                //     }
+
+                // }
+            }
+
+            // Make sure that no content is wider than it is allowed to be. [ <*^="a"> starts with 'a']
+            &:not(.post-type-text) {
+
+                &[data-replies-beat^="1"] {
+
+                    .wrapper-content {
+                        max-width: var(--script-width-content);
+                    }
+
+                    .wrapper-comments, .wrapper-meta {
+                        width: var(--script-width-comments);
+                    }
+
+                }
+            }
+
+            &.post-type-text {
+
+                &[data-replies-beat^="1,1"] {
+
+                    .wrapper-content {
+                        max-width: var(--script-width-content);
+                    }
+
+                    .wrapper-comments, .wrapper-meta {
+                        width: var(--script-width-comments);
+                    }
+
+                }
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: var(--script-width-content, 1fr) var(--script-width-comments, 0.874fr);
+                grid-template-rows: 1fr;
+                grid-column-gap: 1rem;
+                grid-row-gap: 0;
+                grid-template-areas: "content comments";
+
+                .wrapper {
+
+                    &.wrapper-comments {
+                        margin-top: var(--post-meta-height);
+                        z-index: 64;
+                        grid-area: comments;
+                        align-self: start;
+                    }
+        
+                    &.wrapper-meta {
+                        grid-area: comments;
+                    }
+        
+                    &.wrapper-content {
+                        grid-area: content;
+                    }
+        
+                    &.wrapper-tags {
+                        display: none;
+                    }
+
+                    &.wrapper-pagination {
+                        grid-area: content;
+                    }
+
+                    &.wrapper-install {
+                        grid-area: comments;
+                    }
+
+                } //.wrapper
+
+            } //.grid
+
+            .box-content {
+                -webkit-clip-path: polygon(100% 0, 100% calc(100% - var(--post-tear-size)), calc(100% - var(--post-tear-size)) 100%, 0 100%, 0 0);
+                clip-path: polygon(100% 0, 100% calc(100% - var(--post-tear-size)), calc(100% - var(--post-tear-size)) 100%, 0 100%, 0 0);
+            }
+    
+            .box-comments {
+                -webkit-clip-path: none;
+                clip-path: none;
+            }
+    
+            .box-tags {
+                top: -1px;
+                position: relative;
+                -webkit-clip-path: polygon(calc(100% - var(--post-tear-size)) 0, 100% var(--post-tear-size), 100% 100%, 0 100%, 0 0);
+                clip-path: polygon(calc(100% - var(--post-tear-size)) 0, 100% var(--post-tear-size), 100% 100%, 0 100%, 0 0);
+            }
+    
+            .box-meta {
+                -webkit-clip-path: none;
+                clip-path: none;
+            }
+
+        }//.post
+
+
+
+        .post-type-link {
+    
+            .box-content {
+
+                a.link {
+                    grid-template-columns: 220px auto;
+
+                    .link-thumbnail {
+
+                        img {
+                            max-height: 320px;
+                        }
+                    }
+                } 
+            }
+        }//.post-type-links
+
+    }//.posts
+
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1223px) {
+    .glitchy {
+
+        &.glitch-disable-tablet {
+
+            ._display {
+                opacity: 0.0;
+            }
+
+            ._subglitch {
+                opacity: 1.0;
+            }
+
+            ._active {
+
+                ._display {
+                    opacity: 0.0;
+                }
+
+                ._subglitch {
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+}

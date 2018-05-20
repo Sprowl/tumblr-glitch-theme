@@ -1,0 +1,59 @@
+.posts {
+
+    .post-type-quote {
+
+        .box-content {
+
+            blockquote {
+                margin: 0 0 1rem 0;
+                padding-top: 1.5rem;
+                color: var(--color-text-primary);
+                font-family: "Raleway", sans-serif;
+                font-size: 1.625rem;
+
+                .quote {
+                    display: grid;
+                    grid-template-columns: auto 1fr auto;
+                    grid-template-rows: auto;
+                    grid-auto-rows: auto;
+                    grid-column-gap: 0.5rem;
+                    grid-row-gap: 2rem;
+                    grid-template-areas: "before text after" "dash source .";
+
+                    .before, .after {
+                        font-size: 5rem;
+                    }
+
+                    .before {
+                        grid-area: before;
+                    }
+
+                    .after {
+                        grid-area: after;
+                    }
+
+                    .text {
+                        grid-area: text;
+                        line-height: 1.35em;
+                    }
+
+                    .dash {
+                        grid-area: dash;
+                        color: var(--color-text-secondary);
+                        font-family: "Pavanam", sans-serif;
+                        font-size: 1rem;
+                    }
+
+                    .cite {
+                        grid-area: source;
+                        color: var(--color-text-secondary);
+                        font-family: "Pavanam", sans-serif;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

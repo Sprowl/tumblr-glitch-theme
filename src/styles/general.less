@@ -1,0 +1,142 @@
+:root {
+    // Generics.
+    --site-background-top: var(--user-site-background-top, #562e3d);
+    --site-background-bottom: var(--user-site-background-bottom, #221335);
+
+    --body-padding: 3rem 1rem;
+    --body-padding-desktop: 3.75rem;
+    --color-background-content: #111111;
+    --color-background-meta: #1B1B1B;
+    --color-background-actions: #222222;
+    --color-background-comments: #141414;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #DCDCDC;
+    --color-text-tertiary: #969696;
+    --color-text-quaternary: #8a8a8a;
+
+    // Posts.
+    --post-scroll-margin: 0;
+    --post-tags-height: 3.25rem;
+    --post-meta-height: 1.875rem;
+    --post-tear-size: 1.5rem;
+    --text-size-small: 0.875rem;
+
+    // Usercard.
+    /** Width of the Usercard-column in desktop mode and above. */ 
+    --usercard-width: 12rem;
+    /** Glow around the avatar at the top of the page. */
+    --color-glow-border-top: var(--user-color-glow-border-top, ~"rgba(230, 163, 118, 0.8)");
+    /** Glow around the avatar at the bottom of the page. */
+    --color-glow-border-bottom: var(--user-color-glow-border-bottom, ~"rgba(149, 100, 255, 0.8)");
+    /** Glow behind the usercard at the center while the card is at the top of the page. */
+    --color-glow-light-top-start: var(--user-color-glow-light-top-start, ~"rgba(131, 62, 53, 1.0)");
+    /** Glow behind the usercard at the outer edge while the card is at the top of the page. */
+    --color-glow-light-top-end: var(--user-color-glow-light-top-end, ~"rgba(131, 62, 53, 0.0)");
+    /** Glow behind the usercard at the center while the card is at the bottom of the page. */
+    --color-glow-light-bottom-start: var(--user-color-glow-light-bottom-start, ~"rgba(44, 13, 113, 1.0)");
+    /** Glow behind the usercard at the outer edge while the card is at the bottom of the page. */
+    --color-glow-light-bottom-end: var(--user-color-glow-light-bottom-end, ~"rgba(44, 13, 113, 0.0)");
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+html {
+    min-height: 100%;
+    overflow-y: scroll;
+    background-color: var(--site-background-top);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-image: -moz-linear-gradient(-45deg, var(--site-background-top) 30%,  var(--site-background-bottom) 80%); /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(-45deg, var(--site-background-top) 30%, var(--site-background-bottom) 80%); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(135deg, var(--site-background-top) 30%, var(--site-background-bottom) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    font-size: 16px;
+}
+
+head {
+    display: none;
+}
+
+body {
+    padding: var(--body-padding);
+    min-height: 100vh;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    color: var(--color-text-primary);
+    font-family: "Pavanam", sans-serif;
+
+    .main-wrapper {
+        padding-left: calc(192px + 3.75rem);
+        position: relative;
+        z-index: 4;
+        box-sizing: border-box;
+    }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+dl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    dd, dt{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+p {
+    margin: 0 0 1em 0;
+    line-height: 1.5em;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+} 
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+a:focus, a:hover, a:active {
+    color: inherit;
+}
+.blocklink {
+    padding: 0 1rem;
+    display: inline-block;
+    line-height: 3rem;
+}

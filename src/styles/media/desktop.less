@@ -1,0 +1,76 @@
+@media only screen and (min-width: 1224px) {
+    body{
+        padding: var(--body-padding-desktop);
+    }
+
+    .podium {
+        display: grid;
+        grid-template-columns: var(--usercard-width) auto;
+        grid-template-rows: auto;
+        grid-column-gap: 2rem;
+        grid-template-areas: "usercard pages" "usercard posts";
+    }
+
+    .usercard {
+        width: var(--usercard-width);
+        position: fixed;
+        display: grid;
+        grid-template-columns: var(--usercard-width);
+        grid-template-rows: var(--usercard-width) auto;
+        grid-column-gap: 0;
+        grid-row-gap: 2rem;
+        grid-template-areas: "avatar" "content";
+    
+        .glow {
+            top: 4rem;
+            left: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .content {
+            padding-top: 0;
+            text-align: center;
+
+            .title {
+                margin-bottom: 1rem;
+            }
+
+        }
+
+    }
+
+    .pages {
+        padding-top: 2.5rem;
+    }
+
+    .posts {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (min-width: 1224px) and (max-width: 1920px) {
+    .glitchy {
+
+        &.glitch-disable-desktop {
+
+            ._display {
+                opacity: 0.0;
+            }
+
+            ._subglitch {
+                opacity: 1.0;
+            }
+
+            ._active {
+
+                ._display {
+                    opacity: 0.0;
+                }
+
+                ._subglitch {
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+}

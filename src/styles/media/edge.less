@@ -1,0 +1,91 @@
+/** Edge cases, that are unique to this template. */
+@media only screen and (min-width: 800px) {
+    .footer {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "pagination install";
+
+        .pagination {
+            display: inline-block;
+
+            ul li {
+                display: inline-block;
+    
+                &:nth-child(5) {
+                    box-decoration-break: initial;
+    
+                    &::before {
+                      display: none;
+                    }
+                }
+            }
+    
+            .page-last {
+                display: inline-block;
+            }
+        }
+
+        .install {
+            display: inline-block;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 550px) and (max-width: 859px) {
+    .posts {
+
+        .post {
+
+            .grid {
+
+                .wrapper.wrapper-comments {
+                    margin-top: calc(var(--post-meta-height) * 1.5);
+                }
+            }
+
+            &:not(.post-type-text) {
+
+                &[data-replies-beat^="1"] {
+
+                    .box-meta {
+        
+                        ul {
+                            grid-template-columns: 0.5fr 0.5fr;
+                            grid-template-rows: auto;
+                            grid-template-areas: "source timestamp" "via notes";
+                        }
+                    }
+                }
+            }
+
+            &.post-type-text {
+
+                &[data-replies-beat^="1,1"] {
+
+                    .box-meta {
+        
+                        ul {
+                            grid-template-columns: 0.5fr 0.5fr;
+                            grid-template-rows: auto;
+                            grid-template-areas: "source timestamp" "via notes";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    .posts {
+
+        .box-meta {
+
+            ul {
+                grid-template-columns: 0.5fr 0.5fr;
+                grid-template-rows: auto;
+                grid-template-areas: "source timestamp" "via notes";
+            }
+        }
+    }
+}

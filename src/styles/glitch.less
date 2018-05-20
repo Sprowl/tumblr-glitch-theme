@@ -1,0 +1,28 @@
+.glitchy {
+    position: relative;
+
+    ._display {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 16;
+        transform: translateX(-10px) translateY(-10px);
+        opacity: 0.0;
+    }
+
+    ._subglitch {
+        position: relative;
+        z-index: 32;
+    }
+
+    &._active {
+
+        ._display {
+            opacity: 1.0;
+        }
+
+        ._subglitch {
+            opacity: 0.0;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+body::after {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 1em;
+    content: "Smartphone [auto]";
+    position: fixed;
+    z-index: 9999999999;
+    display: block;
+    background-color: black;
+    line-height: 1.5em;
+    font-size: 0.75rem;
+}
+html:hover body::after{
+    display: none;
+}
+
+/* Tablets ----------- */
+@media only screen and (min-width: 550px) {
+    body::after {
+        content: "Tablet [min-width: 550px]";
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+    body::after {
+        content: "Desktop [min-width: 1224px]";
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1921px) {
+    body::after {
+        content: "TV [min-width: 1921px]";
+    }
+}

@@ -1,0 +1,61 @@
+/* Large screens ----------- */
+@media only screen and (min-width: 1921px) {
+    html {
+        font-size: 22px;
+    }
+
+    .podium {
+        max-width: 1920px;
+    }
+
+    .usercard {
+
+        .glow {
+            width: 100vw;
+            height: 100vw;
+            left: calc(var(--usercard-width) / 2);
+            top: calc(var(--usercard-width) / 2);
+        }
+    }
+
+    .posts {
+
+        .box-comments {
+
+            .avatar {
+
+                picture {
+                    max-height: 128px;
+                    display: block;
+                }
+            }
+        }
+    }//.posts
+}
+
+@media only screen and (min-width: 1921px) {
+    .glitchy {
+
+        &.glitch-disable-tv {
+
+            ._display {
+                opacity: 0.0;
+            }
+
+            ._subglitch {
+                opacity: 1.0;
+            }
+
+            ._active {
+
+                ._display {
+                    opacity: 0.0;
+                }
+
+                ._subglitch {
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+}
