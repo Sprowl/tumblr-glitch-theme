@@ -1,5 +1,4 @@
 # Tumblr Glitch Theme
-*Copyright (C) 2018 Max Gresse*
 
 ## Introduction
 Tumblr theme with a bit of `glitch` to it.

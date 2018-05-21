@@ -1,6 +1,6 @@
 import * as html2canvas from "html2canvas";
 
-import { debugImageData, debugImage, random } from "./constants";
+import { random } from "./constants";
 import { Canvas as cCanvas } from "./../classes/Canvas";
 import { Cache as cCache } from "./../classes/Cache";
 
@@ -54,7 +54,6 @@ export namespace Render {
             return createHTML2CanvasImage(element);
         }
     }
-
 
     /** Tries to find and return a `Cache` instance in the list of caches that is available.
      * @private

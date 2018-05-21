@@ -20,6 +20,7 @@ export namespace Bootstrap {
         inits.forAll( init => {
             init();
         });
+
         console.log("Bootstrap:Register");
         registers.forAll( register => {
             register();

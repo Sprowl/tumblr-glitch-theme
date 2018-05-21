@@ -27,7 +27,7 @@ export class Animator {
 
     /** The step method which checks if the callback is still in need of new frames. If so, it requests a new animation frame which will call this method again. Otherwise the requests are canceled.
      * @private
-     * @param {number} time The time when the frame is called.
+     * @param { number } time The time when the frame is called.
      */
     private step (time:number):void {
         this.frame++;

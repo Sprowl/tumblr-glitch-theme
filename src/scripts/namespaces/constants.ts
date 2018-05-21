@@ -15,9 +15,9 @@ export const eventoptions = {
     passive: true
 };
 /** Adjusts the contrast level of an image.
- * @param {ImageData} imageData The image data.
- * @param {number} contrast The contrast level.
- * @returns {ImageData} The image.
+ * @param { ImageData } imageData The image data.
+ * @param { number } contrast The contrast level.
+ * @returns { ImageData } The image.
  */
 export const contrast = function (imageData:ImageData, contrast:number):ImageData {
     let data = imageData.data;
@@ -33,9 +33,9 @@ export const contrast = function (imageData:ImageData, contrast:number):ImageDat
 }
 
 /** Picks a random number between `min` and `max`. Either of them can be chosen too.
- * @param {number} min The minimal value.
- * @param {number} max The maximum value.
- * @returns {number} A number between `min` and `max`.
+ * @param { number } min The minimal value.
+ * @param { number } max The maximum value.
+ * @returns { number } A number between `min` and `max`.
  */
 export const random = function (min:number, max:number):number {
     return Math.floor( Math.random() * (max - min + 1) + min );
@@ -59,7 +59,7 @@ Array.prototype.clean = function ():void {
 };
 
 /** Removes unwanted values from an array.
- * @returns {array} The filtered array.
+ * @returns { array } The filtered array.
  * 
  */
 Array.prototype.forAll = function (callback:Function):void {
@@ -101,10 +101,10 @@ export function getCSSVariable (variable:string):string {
 /** Tweening library.
  * @see Code: http://www.gizma.com/easing/
  * @see Documentation: http://upshots.org/actionscript/jsas-understanding-easing
- * @param {number} t 0.5 (halfway through the tween, so 0.5 of 1 second)
- * @param {number} b 50 (the beginning value of the property being tweened)
- * @param {number} c 150 (the change in value – so the destination value of 200 minus the start value of 50 equals 150)
- * @param {number} d 1 (total duration of 1 second)
+ * @param { number } t 0.5 (halfway through the tween, so 0.5 of 1 second)
+ * @param { number } b 50 (the beginning value of the property being tweened)
+ * @param { number } c 150 (the change in value – so the destination value of 200 minus the start value of 50 equals 150)
+ * @param { number } d 1 (total duration of 1 second)
  */
 export const Tween = {
     /** To not go over the designated goal of `b + c`, we stop the frame counter at a max setting. Normally that would not be needed, as an animation would be stopped when the tweening is done, but in this case where the glitch effect still continues on, it is very much needed. */
@@ -302,6 +302,11 @@ export function CreateGenerator (collection:HTMLCollection|HTMLCollectionOf<any>
     return nextEntry();
 }
 
+/** Goes through a list of nodes, calling a function on each entry.
+ * @public
+ * @param { HTMLCollection|NodeList } collection The list.
+ * @param { Function } callbackfn The function that is called.
+ */
 export function IterateThroughNodelist (collection:HTMLCollection|NodeList, callbackfn:Function):void {
     let i = 0;
     let length = collection.length;
@@ -313,29 +318,3 @@ export function IterateThroughNodelist (collection:HTMLCollection|NodeList, call
     }
 }
 
-export function debugImage (image:HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | ImageBitmap):void {
-    const c = <HTMLCanvasElement>document.getElementById("dsc");
-    const x = c.getContext("2d");
-
-    x.drawImage(image, random(0, c.width - image.width), random(0, c.height - image.height));
-}
-export function debugImageData (imagedata:ImageData):void {
-    let i = 0;
-    let length = imagedata.data.length;
-    const outputRed:Array<number> = [];
-    const outputGreen:Array<number> = [];
-    const outputBlue:Array<number> = [];
-
-
-    for (i; i < length; i += 4) {
-        if (imagedata.data[i + 0] != 0) { outputRed.push(imagedata.data[i + 0])}
-        if (imagedata.data[i + 1] != 0) { outputGreen.push(imagedata.data[i + 1])}
-        if (imagedata.data[i + 2] != 0) { outputBlue.push(imagedata.data[i + 2])}
-    }
-
-    console.log("New Debug Image Data");
-    console.log(outputRed);
-    console.log(outputGreen);
-    console.log(outputBlue);
-    console.log(null);
-}

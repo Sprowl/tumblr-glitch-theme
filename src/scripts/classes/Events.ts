@@ -16,55 +16,7 @@ type tEventTriggers = {
     start:tEventTrigger;
     stop:tEventTrigger;
 }
-/*
 
-
-        //touchenter
-        touchleave
-        //touchmove
-        touchstart
-        touchend touchcancel
-
-        mouseenter : touchstart
-        mouseleave : touchend
-        click      : click
-        mousedown  : touchstart
-        mouseup    : touchend
-
-
-        hover-start: {
-            mouse : {
-                mouseenter
-            },
-            touch : {
-                touchstart
-            }
-        }
-        hover-end {
-            mouse: {
-                mouseleave
-            },
-            touch : {
-                touchend
-            }
-        }
-
-        click: {
-            mouse : {
-                mouseup
-            },
-            touch : {
-                touchend
-            }
-        }
-
-
-
-        //mouseover
-        //mousemove
-        mousedown
-        mouseup
- */
 export const EVENT_HOVER_START:tEventTrigger = {
     mouse: "mouseenter",
     touch: "touchend"

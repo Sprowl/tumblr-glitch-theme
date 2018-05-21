@@ -54,7 +54,7 @@ export class Glitch {
     /** Creates a new `Glitch` instance.
      * @constructor
      * @param { HTMLElement } element The HTML element, that acts as a wrapper for the soon-to-be canvas ans holder of all event listeners.
-     * @param {_Canvas_} image An instance of the `Canvas` class, that will be used as the base image for the animation.
+     * @param { Canvas } image An instance of the `Canvas` class, that will be used as the base image for the animation.
      */
     public constructor (element:HTMLElement, image:Canvas) {
         Glitch.instances = Glitch.instances || [];
@@ -182,11 +182,11 @@ export class Glitch {
 
     /**
      * @private
-     * @param {number} length The entire range that needs to be chopped up.
-     * @param {number} divisor (default: 4) The mathematical size minimum of each chunk. Example: length / divisor = probable number of chunks.
-     * @returns {Array<number>} An array of numbers with absolute numbers to splice the image with later.
+     * @param { number } length The entire range that needs to be chopped up.
+     * @param { number } divisor (default: 4) The mathematical size minimum of each chunk. Example: length / divisor = probable number of chunks.
+     * @returns { Array<number> } An array of numbers with absolute numbers to splice the image with later.
      */
-    private getChunks (length:number, divisor = 4):Array<number> {
+    private getChunks (length:number, divisor:number = 4):Array<number> {
         const splits = Math.floor(length / divisor);
         const chunks = [];
         let i;
@@ -216,8 +216,8 @@ export class Glitch {
 
     /**  Uses the chunks of the divided image and moves them around.
      * @private
-     * @param {number} frame The current frame.
-     * @returns {boolean} Wether a next frame is required or not.
+     * @param { number } frame The current frame.
+     * @returns { boolean } Wether a next frame is required or not.
      */
      private frame (frame:number):boolean {
     
@@ -264,7 +264,7 @@ export class Glitch {
 
     /** Moves chunks around along the X axis.
      * @private
-     * @param {number} frame The frame number.
+     * @param { number } frame The frame number.
      */
     private moveX (frame:number):void {
         let start:number;
@@ -295,7 +295,7 @@ export class Glitch {
 
     /** Moves chunks around along the Y axis.
      * @private
-     * @param {number} frame The frame number.
+     * @param { number } frame The frame number.
      */
     private moveY (frame:number):void {
         const chunks = this.getChunks(this.width, 15);
@@ -328,7 +328,7 @@ export class Glitch {
 
     /** Moves the seperated RGB channels around.
      * @private
-     * @param {number} frame The frame number.
+     * @param { number } frame The frame number.
      */
     private colorShift (frame:number):void {
         this.memory.clear();
@@ -357,7 +357,7 @@ export class Glitch {
 
     /** Animation begin.
      * @private
-     * @param {MouseEvent} event The event that triggered this method.
+     * @param { MouseEvent|TouchEvent } event The event that triggered this method.
      */
     private start (event:MouseEvent|TouchEvent):void {
         this.isStopping = false;
@@ -387,7 +387,7 @@ export class Glitch {
 
     /** Signals the animation to end. The animation itself will become more stable over time, until no new frames are rendered ultimately.
      * @private
-     * @param {MouseEvent} event The event that triggered this method.
+     * @param { MouseEvent|TouchEvent } event The event that triggered this method.
      */
     private callEnd (event:MouseEvent|TouchEvent):void {
         this.isStopping = true;
