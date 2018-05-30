@@ -78,16 +78,6 @@
                         min-width: var(--script-width-content);
                     }
                 }
-
-                &.post-type-video {
-
-                    .box-content {
-        
-                        iframe {
-                            height: ~"calc( var(--script-width-full) / 16 * 9 )";
-                        }
-                    }
-                }
             }
 
             // Make sure that no content is wider than it is allowed to be. [ <*^="a"> starts with 'a']
@@ -104,6 +94,17 @@
                     }
 
                 }
+
+                &.post-type-video {
+
+                    .box-content {
+            
+                        iframe {
+                            height: var(--script-media-content-height, ~"calc( ( var(--script-width-content) ) / (16 / 9) )");
+                        }
+                    }
+                }
+
             }
 
             &.post-type-text {
