@@ -51,7 +51,7 @@ export class Post {
 
     /** Called by the Node iterator, this method finds the correct HTMLElements for this `content` and `comments`.
      * @private
-     * @param {HTMLElement} element The current HTML element that this method looks at.
+     * @param { HTMLElement } element The current HTML element that this method looks at.
      */
     private getChildren (element:HTMLElement):void {
         if ( element.classList.contains("box-content")) {

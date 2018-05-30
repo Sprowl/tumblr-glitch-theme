@@ -117,18 +117,6 @@ export class Events {
         this.listenersStopTriggered();
 
         this.doCallbackStop(event);
-        // let target = <HTMLElement>event.target;
-        // let isElement = true;
-
-        // while(target != this.element && target != document.body) {
-        //     isElement = false;
-        //     target = target.parentElement;
-        // }
-
-        // if (!isElement) {
-        //     document.removeEventListener("touchstart", this.doTouchStop);
-        //     this.doCallbackStop(event);
-        // }
     }
 
     /** Removes the current (`start`) Event listeners and adds the new (`stop`) ones.

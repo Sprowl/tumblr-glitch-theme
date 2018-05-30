@@ -432,20 +432,36 @@ export class Glitch {
 
     }
 
+    /** Adds the CSS class that makes the animation to be running.
+     * @private
+     */
     private addClasses ():void {
         this.element.classList.add("_active");
     }
 
+    /** Removes the CSS class that makes the animation to be running.
+     * @private
+     */
     private removeClasses():void {
         this.element.classList.remove("_active");
     }
 
 
 
+    /** Gets the width of the displaying canvas. Cannot be overwritten.
+     * @param { number } width Cannot be overwritten.
+     * @returns { number } Width of the display.
+     */
+    public set width (width:number) {}
     public get width ():number {
         return this.display.width;
     }
 
+    /** Gets the height of the displaying canvas. Cannot be overwritten.
+     * @param { number } height Cannot be overwritten.
+     * @returns { number } height of the display.
+     */
+    public set height (height:number) {}
     public get height ():number {
         return this.display.height;
     }

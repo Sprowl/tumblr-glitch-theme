@@ -9,7 +9,7 @@ import { Resize } from "./../events/resize";
 
 
 export namespace Glitch {
-    
+
 /////////////////////////////
 /// Constructing.
 /////////////////////////////

@@ -101,7 +101,6 @@ export namespace PostsResponsive {
                 break;
         }
 
-        // console.log(`Window: ${full}, Viewsize: ${media}, Podium: ${wrapper}, Usercard: ${space_usercard}, Posts: ${size}`);
         return size || 0;
     }
 
@@ -127,8 +126,8 @@ export namespace PostsResponsive {
         setCSSVariable(list, "--script-left-content", leftContent);
         setCSSVariable(list, "--script-left-comments", leftComments);
 
-        setCSSVariable(list, "--script-media-content-height", (widthContent / 16 * 9) );
-        setCSSVariable(list, "--script-media-full-height", (widthFull / 16 * 9) );
+        setCSSVariable(list, "--script-media-content-height", Math.ceil( (widthContent / (16 / 9 ) ) ) );
+        setCSSVariable(list, "--script-media-full-height", Math.ceil( (widthFull / (16 / 9) ) ) );
     }
 
 /////////////////////////////

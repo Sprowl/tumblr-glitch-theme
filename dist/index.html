@@ -119,6 +119,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     {block:Title}<h3>{Title}</h3>{/block:Title}
 
                     <div class="list-contents">
@@ -129,8 +130,7 @@
                             <message class="message">{Body}</message>
                             {/block:Reblogs}
                     </div>
-                    
-                    
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -138,13 +138,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -155,10 +151,6 @@
                             <message class="message">{Body}</message>
                         </dd>
                         {/block:Reblogs}
-
-
-
-
                     </dl>
                 </box>
             </wrapper>
@@ -217,6 +209,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <photo class="photo">
                         {LinkOpenTag}
                             <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"{block:LivePhoto}data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}"{/block:LivePhoto}>
@@ -225,8 +218,7 @@
                     {block:NotReblog}
                         <message class="message">{Caption}</message>
                     {/block:NotReblog}
-                    
-                    
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -234,13 +226,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -309,11 +297,11 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <photoset class="photoset">
                             {Photoset}
                     </photoset>
-                    
-                    
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -321,13 +309,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -396,6 +380,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <blockquote class="{Length}">
                         <quote class="quote">
                             <aposthrope class="before">“</aposthrope><text class="text">{Quote}</text><aposthrope class="after">”</aposthrope>
@@ -412,13 +397,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -487,6 +468,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <a {Target} href="{URL}" class="link">
                         <div class="link-thumbnail">
                             {block:Thumbnail}<img src="{Thumbnail}" alt="" />{/block:Thumbnail}
@@ -501,6 +483,7 @@
                     {block:NotReblog}
                         <message class="message">{Description}</message>
                     {/block:NotReblog}
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -508,13 +491,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -583,12 +562,14 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     {block:Title}<h3>{Title}</h3>{/block:Title}
                     <ul class="conversation">
                     {block:Lines}
                         <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
                     {/block:Lines}
                     </ul>
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -596,13 +577,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -671,6 +648,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <div class="container">
                         {block:AudioEmbed}
                             {AudioEmbed color="black"}
@@ -679,6 +657,7 @@
                     {block:NotReblog}
                         <message class="message">{Caption}</message>
                     {/block:NotReblog}
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -686,13 +665,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -761,12 +736,14 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <div class="container">
                         {VideoEmbed-700}
                     </div>
                     {block:NotReblog}
                         <message class="message">{Caption}</message>
                     {/block:NotReblog}
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -774,13 +751,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -849,6 +822,7 @@
         <grid class="grid">
             <wrapper class="wrapper wrapper-dynamic wrapper-content">
                 <box class="box box-content">
+
                     <dl>
                         <dt class="avatar asker">
                             <picture>
@@ -862,7 +836,6 @@
                             <message class="message">{Question}</message>
                         </dd>
 
-                        <!-- Answer is part of a reblog -->
                         {block:Answerer}
                         <dt class="avatar answerer">
                                 <picture>
@@ -878,10 +851,10 @@
                         {/block:Answerer}
                     </dl>
 
-                    <!-- Answer posted for the first time -->
                     {block:NotReblog}
                         <message class="answer">{Replies}</message>
                     {/block:NotReblog}
+
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-dynamic wrapper-comments">
@@ -890,13 +863,9 @@
                     <dl>
                         {block:Reblogs}
                         <dt class="avatar">
-                            {block:HasPermalink}<a href="{Permalink}" target="_blank">
-                            <picture>
-                                <source media="(min-width: 1921px)" srcset="{PortraitURL-128}" />
-                                <source media="(min-width: 1224px)" srcset="{PortraitURL-64}" />
-                                <img src="{PortraitURL-64}" />
-                            </picture>
-                            </a>{/block:HasPermalink}
+                            {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                            <img src="{PortraitURL-64}" class="reply-avatar"/>
+                            {block:HasPermalink}</a>{/block:HasPermalink}
                         </dt>
                         <dd class="text">
                             <h5 class="username">
@@ -908,9 +877,7 @@
                         </dd>
                         {/block:Reblogs}
                     </dl>
-
                     {/block:RebloggedFrom}
-
                 </box>
             </wrapper>
             <wrapper class="wrapper wrapper-static wrapper-meta">

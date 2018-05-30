@@ -92,7 +92,6 @@ export namespace Queue {
         }
     }
 
-
     /** Works an element to create an image, calling the next afterwards.
      * @private
      * @async
