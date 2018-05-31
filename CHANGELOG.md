@@ -1,13 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.2-beta] - 2018-05-31
+### Added
+- functionality to view images inside the reply section in the right column to be displayed in full size by clicking on them
+
+### Changed
+- fixed the previously added video 16:9 ratio fix not being applied to videos inside posts that do not have replies and therefore stretch along the full posts-listing width
+
 ## [1.3.1-beta] - 2018-05-30
 ### Changed
 - fixed issue with video iframes not applying the previous 16:9 height fix
 
 ## [1.3.0-beta] - 2018-05-30
 ### Added
-- [CHANGELOG.md]() file
+- [CHANGELOG.md](https://github.com/Sprowl/tumblr-glitch-theme/blob/master/CHANGELOG.md) file
 
 ### Changed
 - fixed video iframe heights to use the correct 16:9 ratio

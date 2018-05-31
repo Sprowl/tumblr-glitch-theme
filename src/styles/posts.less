@@ -156,9 +156,11 @@
         }
 
         .text {
+            position: relative;
 
             .username {
                 margin: 0 0 0.5em 0;
+                position: relative;
                 line-height: 1em;
                 color: var(--color-text-primary);
                 font-size: 0.75rem;
@@ -186,6 +188,23 @@
                     transition: none;
                 }
 
+            }
+
+            ._zoom-original {
+                cursor: zoom-in;
+            }
+
+            ._zoom-copy {
+                width: initial;
+                max-width: unset;
+                position: absolute;
+                z-index: 64;
+                display: none;
+                cursor: zoom-out;
+
+                &._active {
+                    display: block;
+                }
             }
         }
 

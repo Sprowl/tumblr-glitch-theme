@@ -9,6 +9,7 @@ import { Post } from "./namespaces/classes/Post";
 import { Queue } from "./namespaces/queue";
 import { Usercard } from "./namespaces/usercard";
 import { PostsResponsive } from "./namespaces/posts.responsive";
+import { Zoom } from "./namespaces/zoom";
 
 
 
@@ -45,6 +46,7 @@ namespace Boot {
         Post.boot();
         Usercard.boot();
         PostsResponsive.boot();
+        Zoom.boot();
         Scroll.boot();
         Resize.boot();
         Inputs.boot();

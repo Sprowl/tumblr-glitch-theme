@@ -103,8 +103,18 @@
                             height: var(--script-media-content-height, ~"calc( ( var(--script-width-content) ) / (16 / 9) )");
                         }
                     }
-                }
 
+                    // No replies
+                    &[data-replies-beat=""] {
+
+                        .box-content {
+            
+                            iframe {
+                                height: var(--script-media-full-height, ~"calc( ( var(--script-width-full) ) / (16 / 9) )");
+                            }
+                        }
+                    }
+                }
             }
 
             &.post-type-text {

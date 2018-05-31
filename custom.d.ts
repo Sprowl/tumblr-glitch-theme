@@ -7,3 +7,7 @@ interface Array<T> {
     clean():T;
     forAll(callbackfn: (value:T, index:number) => void):void;
 }
+
+interface HTMLImageElement {
+    properties:any;
+}
