@@ -62,7 +62,7 @@ export namespace Zoom {
         private build ():void {
             const copy = document.createElement("img");
             copy.src         = this.original.src;
-            copy.style.top   = `${this.original.offsetTop}px`;
+            // copy.style.top   = `${this.original.offsetTop}px`;
             copy.style.right = "0px";
             copy.classList.add("_zoom-copy");
 

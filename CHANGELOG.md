@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-rc1] - 2018-06-10
+### General
+- first version to be submitted to tumblr and await approval from it
+
+### Changed
+- install theme-button now links to an appropiate demo blog
+
 ## [1.3.2-beta] - 2018-05-31
 ### Added
 - functionality to view images inside the reply section in the right column to be displayed in full size by clicking on them
